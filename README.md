@@ -1,5 +1,5 @@
 # knapsack
-# new method for unbound knapsack problem.
+# new method for unbounded knapsack problem.
 
 Given a knapsack weight W and a set of n items with certain value val[i] and weight wt[i], pick items into the knapsack (you can pick same item again and again) and get the maximum value.
 
