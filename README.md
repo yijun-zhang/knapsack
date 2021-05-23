@@ -127,3 +127,48 @@ Test input:
    Output:  4032
 
 the print i value is 11 in this case, that means the run time is (11* 34 ),  while the  traditional algorithm is (W*count of items) = (384*34).
+
+
+---------------------------------------
+# Also apply to Coin Change problem[leetcode322](https://leetcode.com/problems/coin-change/)
+```
+class Solution:
+    def coinChange(self, coins: List[int], amount: int) -> int:
+        maxIndex = 0
+        for i in range(1,len(coins)):
+            if coins[i]>coins[maxIndex]:
+                maxIndex = i
+            
+        mins=[math.inf]*(amount+1)
+        mins[0]=0
+        counter = 0
+        breaked = False
+        for i in range(1,amount+1):
+            for c in coins:
+                if c <= i:
+                    mins[i] = min(mins[i], mins[i - c] + 1)
+                    
+            if i - coins[maxIndex]>=0 and mins[i] - mins[i-coins[maxIndex]] == coins[maxIndex]:
+                counter += 1
+                if counter>=coins[maxIndex]:
+                    breaked = True
+                    #print(i)
+                    break
+            else:
+                counter = 0
+                
+        if not breaked:    
+            if mins[-1] ==math.inf:
+                return -1
+            else:
+                return  mins[-1]
+        else:
+            start = i - coins[maxIndex]+1
+            times = (amount - start) // coins[maxIndex]
+            index = (amount - start) % coins[maxIndex] + start
+            return (times  + mins[index])
+```
+
+
+
+
