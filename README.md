@@ -1,9 +1,9 @@
 # knapsack
-new method for unbound knapsack problem
+# new method for unbound knapsack problem.
 
 Given a knapsack weight W and a set of n items with certain value val[i] and weight wt[i], pick items into the knapsack (you can pick same item again and again) and get the maximum value.
 
-Please check traditional algorithm
+Please check [traditional algorithm](https://www.geeksforgeeks.org/unbounded-knapsack-repetition-items-allowed/)
 
 Example:
 
@@ -82,7 +82,7 @@ Python3
 def unboundedKnapsackBetter(W, val, wt):
     #get max dense item index
     maxDenseIndex = 0
-    #find the item with highest unit value( if two item with same unit value then choose the lighter item)
+    #find the item with highest unit value( if two items has same unit value then choose the lighter item)
     for i in range(1,len(val)):
       if Fraction(val[i],wt[i]) > Fraction(val[maxDenseIndex],wt[maxDenseIndex]) \
       or (Fraction(val[i],wt[i]) == Fraction(val[maxDenseIndex],wt[maxDenseIndex]) and wt[i] < wt[maxDenseIndex] ):
