@@ -25,7 +25,7 @@ Output: 594
 
 Below is the implementation of  traditional algorithm.
 
-'''
+```
 Python3
 
 def unboundedKnapsack(W, val, wt):
@@ -36,7 +36,7 @@ def unboundedKnapsack(W, val, wt):
                 dp[i] = max(dp[i], dp[i - wt[j]] + val[j])
 
     return dp[W]
-'''
+```
 
 Run time is O(nW) , n is the count of items.
 
@@ -76,6 +76,7 @@ then same as followed windows..
 
 Below is the implementation of  new algorithm.
 
+```
 Python3
 
 def unboundedKnapsackBetter(W, val, wt):
@@ -111,7 +112,7 @@ def unboundedKnapsackBetter(W, val, wt):
         times = (W - start) // wt[maxDenseIndex]
         index = (W - start) % wt[maxDenseIndex] + start
         return (times * val[maxDenseIndex] + dp[index])
-
+```
 
 If we uncomment the #print(i) in the code, we can see i value when we break the loop.
 
