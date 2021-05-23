@@ -25,6 +25,7 @@ Output: 594
 
 Below is the implementation of  traditional algorithm.
 
+'''
 Python3
 
 def unboundedKnapsack(W, val, wt):
@@ -35,7 +36,7 @@ def unboundedKnapsack(W, val, wt):
                 dp[i] = max(dp[i], dp[i - wt[j]] + val[j])
 
     return dp[W]
-
+'''
 
 Run time is O(nW) , n is the count of items.
 
