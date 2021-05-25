@@ -21,7 +21,7 @@ Input : W = 50
 
         wt =[2,3]
 
-Output: 594
+Output: 294
 
 Below is the implementation of  traditional algorithm.
 
